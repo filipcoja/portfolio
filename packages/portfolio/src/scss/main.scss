@@ -1,0 +1,94 @@
+@use "default";
+
+.main-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 3rem;
+  grid-auto-rows: auto;
+  grid-template-areas:
+                    "info-person info-about"
+                    "info-links info-about"
+                    "timeline timeline";
+}
+
+.timeline {
+  grid-area: timeline;
+}
+
+.info-person {
+  grid-area: info-person;
+  white-space: nowrap;
+}
+
+.info-about {
+  grid-area: info-about;
+}
+
+.info-grid {
+  display: flex;
+}
+
+.info-items {
+  margin-left: 1rem;
+}
+
+.info-about p {
+  margin-bottom: 1rem;
+}
+
+.project-logo {
+  width: 5rem;
+}
+
+.project-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.main-wrapper > h1 {
+  margin: auto;
+}
+
+.name {
+  margin: 0;
+}
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.icon {
+  width: 1.2rem;
+}
+
+.project-headline {
+  display: flex;
+  align-items: center;
+}
+
+.project-links {
+  margin: 0 1rem;
+  display: flex;
+  gap: .5rem;
+
+  > a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.imprint {
+  display: block;
+  margin: 10rem 0;
+  text-align: center;
+}

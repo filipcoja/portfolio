@@ -1,0 +1,27 @@
+services:
+  portfolio:
+    image: node:22
+    volumes:
+      - ./packages/portfolio:/app
+    working_dir: /app
+    networks:
+      - portfolionet
+    command: sh -c "corepack enable && yarn && exec yarn dev"
+  listassist:
+    image: nginx:alpine
+    volumes:
+      - ./packages/listassist:/usr/share/nginx/html
+    working_dir: /app
+    networks:
+      - portfolionet
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx:/etc/nginx/templates:ro
+    ports:
+        - "80:80"
+    networks:
+      - portfolionet
+networks:
+  portfolionet:
+    driver: bridge

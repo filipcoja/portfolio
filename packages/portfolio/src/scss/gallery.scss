@@ -1,0 +1,17 @@
+.gallery-item {
+  height: 10rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+.pswp-gallery {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
