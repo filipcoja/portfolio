@@ -2,13 +2,22 @@
 
 .main-wrapper {
   display: grid;
-  grid-template-columns: auto 1fr;
   grid-gap: 3rem;
   grid-auto-rows: auto;
   grid-template-areas:
                     "info-person info-about"
                     "info-links info-about"
                     "timeline timeline";
+}
+
+@media (max-width: 1000px) {
+  .main-wrapper {
+    grid-template-areas:
+                    "info-person"
+                    "info-about"
+                    "info-links"
+                    "timeline";
+  }
 }
 
 .timeline {
@@ -63,7 +72,9 @@
 .gallery {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -85,10 +96,4 @@
     display: flex;
     align-items: center;
   }
-}
-
-.imprint {
-  display: block;
-  margin: 10rem 0;
-  text-align: center;
 }
