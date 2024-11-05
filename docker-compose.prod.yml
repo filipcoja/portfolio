@@ -1,5 +1,6 @@
 services:
   portfolio:
+    restart: always
     build:
         context: ./packages/portfolio
         target: base
@@ -8,6 +9,7 @@ services:
     networks:
       - portfolionet
   listassist:
+    restart: always
     image: nginx:alpine
     volumes:
       - ./packages/listassist:/usr/share/nginx/html
